@@ -1,0 +1,96 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(back.jpg);
+    background-size: cover;
+}
+.buttons {
+    margin: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    background: #505050;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    flex: content;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+}
+#toastBox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.toast {
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    align-items: center;
+    display: flex;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.7s linear forwards;
+border-radius: 8px;
+}
+@keyframes moveleft {
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.toast i {
+    margin: 0 22px;
+    font-size: 32px;
+    color: rgb(0, 167, 0);
+}
+
+.toast.error i {
+    color: rgb(240, 2, 2);
+}
+
+.toast.invalid i {
+    color: blueviolet;
+}
+
+.toast::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anime 6s linear forwards;
+}
+@keyframes anime {
+    100%{
+        width: 0;
+    }
+}
+.toast.error::after{
+    background: rgb(240, 2, 2);
+}
+.toast.invalid::after{
+    background: blueviolet;
+}
+
